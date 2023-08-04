@@ -1,0 +1,937 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ohsome API Test &#8212; R4R Prototypes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prototypes/06-ohsome';</script>
+    <link rel="canonical" href="https://kolumdium.github.io/r4r-prototypes/prototypes/06-ohsome.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../book/bib.html" />
+    <link rel="prev" title="Empty" href="05.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../book/intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/explenations/paper.html">Ready for robots? Assessment of autonomous delivery robot operative accessibility in German cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../book/basics/folium/folium.html">Folium</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/osm/osm.html">OSM Infos</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/osmnx.html">OSMNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/overpass.html">Overpass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/overpy.html">Overpy</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prototypen</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../book/prototypes/prototypes.html">Prototypen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-tags.html">Einfache Analysen für Freiberg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-speeds.html">Geschwindigkeiten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-traveltime.html">Traveltimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-population.html">Population</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">Empty</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ohsome API Test</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anhang</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../book/bib.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/kolumdium/r4r-prototypes/master?urlpath=tree/prototypes/06-ohsome.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/kolumdium/r4r-prototypes/blob/master/prototypes/06-ohsome.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes/edit/main/prototypes/06-ohsome.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes/issues/new?title=Issue%20on%20page%20%2Fprototypes/06-ohsome.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/prototypes/06-ohsome.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ohsome API Test</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnisse">Ergebnisse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ohsome-api-test">
+<h1>Ohsome API Test<a class="headerlink" href="#ohsome-api-test" title="Permalink to this heading">#</a></h1>
+<p>Quellen:
+<a class="reference external" href="https://heigit.org/big-spatial-data-analytics-en/ohsome/">HeiGIT</a></p>
+<p><a class="reference external" href="https://heigit.org/big-spatial-data-analytics-en/ohsome/ohsome-quality-analyst-oqt/">ohsome quality analyst (OQT)</a></p>
+<p>API Endpoints:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.ohsome.org/v1&quot;</span>
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;/elements/length&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">endpoint</span>
+
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://oqt.ohsome.org/api&quot;</span>
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;/indicators&quot;</span>
+<span class="n">indicator</span> <span class="o">=</span> <span class="s2">&quot;/mapping-saturation&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">endpoint</span> <span class="o">+</span> <span class="n">indicator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bpolys_from_name</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">which_result</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geocoder</span><span class="o">.</span><span class="n">geocode_to_gdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">which_result</span><span class="o">=</span><span class="n">which_result</span><span class="p">)</span>
+    <span class="n">north</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">bbox_north</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">east</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">bbox_east</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">south</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">bbox_south</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">west</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">bbox_west</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">bpolys</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Region 1&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span>
+                    <span class="p">[</span>
+                        <span class="n">east</span><span class="p">,</span> <span class="n">north</span>
+                    <span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="n">west</span><span class="p">,</span> <span class="n">north</span>
+                    <span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="n">west</span><span class="p">,</span> <span class="n">south</span>
+                    <span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="n">east</span><span class="p">,</span> <span class="n">south</span>
+                    <span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="n">east</span><span class="p">,</span> <span class="n">north</span>
+                    <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">bpolys</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">display_oqt_results</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;description&quot;</span><span class="p">]</span>
+    <span class="n">svg</span> <span class="o">=</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;svg&quot;</span><span class="p">]</span>
+
+    <span class="c1"># print(json.dumps(result, indent=4))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quality Label: &quot;</span> <span class="o">+</span> <span class="n">colored</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">color</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result Description: &quot;</span> <span class="o">+</span> <span class="n">description</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">svg</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">display_ohsome_results</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+        <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;highway=cycleway&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Temporal Evolution of Cycleways&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_ohsome_result</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://api.ohsome.org/v1/elements/length&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geocoder</span><span class="o">.</span><span class="n">geocode_to_gdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">which_result</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">north</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">bbox_north</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">east</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">bbox_east</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">south</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">bbox_south</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">west</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">bbox_west</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;bboxes&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">west</span><span class="p">,</span> <span class="n">south</span><span class="p">,</span> <span class="n">east</span><span class="p">,</span> <span class="n">north</span><span class="p">),</span>
+        <span class="s2">&quot;filter&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filter_string</span><span class="p">),</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2008-01-01/2023-01-01/P1M&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an Exception if HTTP Status Code is not 200</span>
+
+    <span class="n">ohsome_result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ohsome_result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_oqt_result</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://oqt.ohsome.org/api/indicators/mapping-saturation&quot;</span><span class="p">,</span> <span class="n">bpolys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ohsome_result</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="n">topic</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;mapping-saturation-cycleways&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cycleways&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Number of features taged as </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filter_string</span><span class="p">),</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="n">ohsome_result</span><span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;bpolys&quot;</span><span class="p">:</span> <span class="n">bpolys</span><span class="p">,</span>
+        <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="n">topic</span><span class="p">,</span>
+        <span class="s2">&quot;includeSvg&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;includeHtml&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;flatten&quot;</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="p">}</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an Exception if HTTP Status Code is not 200</span>
+
+    <span class="n">oqt_result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">oqt_result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">which_result</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">bpolys</span> <span class="o">=</span> <span class="n">bpolys_from_name</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">which_result</span><span class="o">=</span><span class="n">which_result</span><span class="p">)</span>
+    <span class="n">ohsome_result</span> <span class="o">=</span> <span class="n">get_ohsome_result</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="n">filter_string</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">&quot;highest_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ohsome_result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+    <span class="c1"># display_ohsome_results(ohsome_result)</span>
+    <span class="n">oqt_result</span> <span class="o">=</span> <span class="n">get_oqt_result</span><span class="p">(</span>
+        <span class="n">bpolys</span><span class="o">=</span><span class="n">bpolys</span><span class="p">,</span> <span class="n">ohsome_result</span><span class="o">=</span><span class="n">ohsome_result</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="n">filter_string</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">&quot;quality_label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">oqt_result</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">&quot;quality_description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">oqt_result</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;description&quot;</span><span class="p">]</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">&quot;quality_value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">oqt_result</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+    <span class="c1"># display_oqt_results(oqt_result, name=name)</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>{ city : {
+highway_type: {
+result_no_tag : result
+“tag”: {
+result_tag : result
+percentage: result
+}
+}
+}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter_string = &quot;(highway=cycleway or cycleway:both=* or cycleway:left=* or cycleway:right=*) and geometry:line&quot;</span>
+<span class="c1"># get_results(name=&quot;Freiberg, Sachsen&quot;, which_result=0)</span>
+
+<span class="k">def</span> <span class="nf">get_city_results</span><span class="p">(</span><span class="n">city</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">primary_filter</span><span class="o">=</span><span class="s2">&quot;highway=*&quot;</span><span class="p">,</span> <span class="n">secondary_filters</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">filter_base_line</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> and geometry:line&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">primary_filter</span><span class="p">)</span>
+    <span class="n">results_base_line</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">city</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="n">filter_base_line</span><span class="p">)</span>
+    <span class="n">tags_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">tag_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">secondary_filter</span> <span class="ow">in</span> <span class="n">secondary_filters</span><span class="p">:</span>
+
+        <span class="n">filter_with_tag</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> and </span><span class="si">{1}</span><span class="s2"> and geometry:line&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">primary_filter</span><span class="p">,</span> <span class="n">secondary_filter</span><span class="p">)</span>
+        <span class="n">result_with_tag</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">city</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="n">filter_with_tag</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;base: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">results_base_line</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;filtered: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result_with_tag</span><span class="p">))</span>
+        <span class="n">percentage_with_tag</span> <span class="o">=</span> <span class="p">(</span><span class="n">result_with_tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;highest_count&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span>
+                               <span class="n">results_base_line</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;highest_count&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+        <span class="n">tag_dict</span><span class="p">[</span><span class="n">secondary_filter</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;results_with_tag&quot;</span><span class="p">:</span> <span class="n">result_with_tag</span><span class="p">,</span>
+            <span class="s2">&quot;percentage_with_tag&quot;</span><span class="p">:</span> <span class="n">percentage_with_tag</span>
+        <span class="p">}</span>
+    <span class="n">tag_dict</span><span class="p">[</span><span class="s2">&quot;results_no_tag&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_base_line</span>
+    <span class="n">tags_dict</span><span class="p">[</span><span class="n">primary_filter</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag_dict</span>
+    <span class="k">return</span> <span class="n">tags_dict</span>
+    <span class="c1"># print(&quot;% Ways with {} tag {}&quot;.format(secondary_filter, coverage))</span>
+    <span class="c1"># filter_string = &quot;highway=* and width=* and geometry:line&quot;</span>
+    <span class="c1"># result_with_width = get_results(name=&quot;Freiberg, Sachsen&quot;, which_result=0,</span>
+    <span class="c1">#                                 filter_string=filter_string)</span>
+
+    <span class="c1"># IDEA: What percentage of Ways has all relevant tags?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_city</span><span class="p">(</span><span class="n">city</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">primary_filter</span><span class="o">=</span><span class="s2">&quot;highway=*&quot;</span><span class="p">,</span> <span class="n">secondary_filters</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;width=*&quot;</span><span class="p">,</span> <span class="s2">&quot;smoothness=*&quot;</span><span class="p">,</span> <span class="s2">&quot;surface=*&quot;</span><span class="p">,</span> <span class="s2">&quot;lit=*&quot;</span><span class="p">]):</span>
+    <span class="n">city_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="s2">&quot;ohsome_results&quot;</span> <span class="o">+</span> <span class="n">city</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">city_file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">result_city</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">city_file</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result_city</span> <span class="o">=</span> <span class="n">get_city_results</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">primary_filter</span><span class="p">,</span> <span class="n">secondary_filters</span><span class="p">)</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result_city</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">city_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result_city</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_donut</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">percentage</span><span class="p">,</span> <span class="n">secondary_text</span><span class="p">,</span> <span class="n">highest_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
+    <span class="c1"># Determine the color based on the percentage</span>
+    <span class="k">if</span> <span class="n">percentage</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#ff0000&#39;</span><span class="p">,</span> <span class="s1">&#39;#f0f0f0&#39;</span><span class="p">]</span>  <span class="c1"># red</span>
+    <span class="k">elif</span> <span class="n">percentage</span> <span class="o">&lt;=</span> <span class="mi">97</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#ffcc00&#39;</span><span class="p">,</span> <span class="s1">&#39;#f0f0f0&#39;</span><span class="p">]</span>  <span class="c1"># yellow</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#4caf50&#39;</span><span class="p">,</span> <span class="s1">&#39;#f0f0f0&#39;</span><span class="p">]</span>  <span class="c1"># green</span>
+
+    <span class="c1"># Values for the pie chart (donut)</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">percentage</span><span class="p">,</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">percentage</span><span class="p">]</span>
+    <span class="c1"># Plot the pie chart</span>
+    <span class="n">wedges</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+                       <span class="n">counterclock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">wedgeprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="n">width</span><span class="p">})</span>
+    <span class="c1"># Equal aspect ratio ensures that pie is drawn as a circle</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="c1"># Add the secondary text</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">secondary_text</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="c1"># Add the highest_count text if provided</span>
+    <span class="k">if</span> <span class="n">highest_count</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Count: </span><span class="si">{</span><span class="n">highest_count</span><span class="si">:</span><span class="s1">,.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_city</span><span class="p">(</span><span class="n">city</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">ohsome_results</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rows_data</span> <span class="o">=</span> <span class="n">ohsome_results</span><span class="p">[</span><span class="n">city</span><span class="p">][</span><span class="s2">&quot;highway=*&quot;</span><span class="p">]</span>
+    <span class="c1"># Create a figure and axes to plot the donut charts with any number of rows</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rows_data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+                             <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows_data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="c1"># Adjusting the main title position</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+
+    <span class="c1"># Iterate through the data and plot the donut charts for each row</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rows_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;results_no_tag&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="c1"># Extract values for plotting</span>
+        <span class="n">results_no_tag</span> <span class="o">=</span> <span class="n">ohsome_results</span><span class="p">[</span><span class="n">city</span><span class="p">][</span><span class="s2">&quot;highway=*&quot;</span><span class="p">][</span><span class="s1">&#39;results_no_tag&#39;</span><span class="p">]</span>
+        <span class="n">results_with_tag</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;results_with_tag&#39;</span><span class="p">]</span>
+        <span class="n">percentage_with_tag</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;percentage_with_tag&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Plot the donut charts</span>
+        <span class="n">plot_donut</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">results_no_tag</span><span class="p">[</span><span class="s1">&#39;quality_value&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+                   <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">results_no_tag</span><span class="p">[</span><span class="s1">&#39;quality_value&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">highest_count</span><span class="o">=</span><span class="n">results_no_tag</span><span class="p">[</span><span class="s1">&#39;highest_count&#39;</span><span class="p">])</span>
+        <span class="n">plot_donut</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">results_with_tag</span><span class="p">[</span><span class="s1">&#39;quality_value&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+                   <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">results_with_tag</span><span class="p">[</span><span class="s1">&#39;quality_value&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">highest_count</span><span class="o">=</span><span class="n">results_with_tag</span><span class="p">[</span><span class="s1">&#39;highest_count&#39;</span><span class="p">])</span>
+        <span class="n">plot_donut</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">percentage_with_tag</span><span class="p">,</span>
+                   <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">percentage_with_tag</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Adding the titles for the rows</span>
+        <span class="c1"># Adjusting the position</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ergebnisse">
+<h2>Ergebnisse<a class="headerlink" href="#ergebnisse" title="Permalink to this heading">#</a></h2>
+<p>Zu sehen sind:</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>Spalte die Sättigung des primary_filters. In diesem Fall “highway=* and geometry:line”. Das umfasst alle Straßen die in OSM eingetragen sind.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Spalte ist die Sättigung inklusive des secondary_filters jeweils durch die Überschrift der Zeile angezeigt. z.B.(width=* würde als Filter haben “highway=* and geometry:line and width=*”)</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Spalte ist das Prozentualle Verhältniss zwischen der maximalen Anzahl von Objekten ohne secondary_filter zu der Anzahl der Objekte mit secondary_filter. Das heißt wie viel Prozent der Straßen dieses Attribut besitzen.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="interpretation">
+<h2>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h2>
+<p>Ist eine Sättigung noch nicht erreicht, so sind Freiwillige noch dabei dieses Tag zu vervollständigen. Es ist dann nicht plausibel eine Aussage über die Daten zu treffen, da klar ist, dass sie noch nicht vollständig sind.
+Ist die Sättigung erreicht, so ist es unwahrscheinlich, dass sich noch jemand die Mühe macht dieses Tag zu vervollständigen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nur weil die Sättigung hoch ist bedeutet das nicht, dass alle Attribute/Straßen vollständig eingetragen sind. Es heißt nur, das keine neuen mehr eingetragen werden.
+Das kann verschiedene Gründe haben. Zum Beispiel, kann es sein, dass Leute sich den Aufwand nicht machen wollen, oder es gibt keine Datenquellen für das Attribut.</p>
+</div>
+<p>Ist die erste Spalte gesättigt und die zweite nicht, wird sich das Verhältniss in der dritten Spalte noch verbessern.</p>
+<p>Sind Spalte eins und Spalte zwei gesättigt, so wird sich das Verhältniss in der dritten Spalte nicht mehr verbessern. Das bedeutet, es wird bei der angegebenen Abdeckung bleiben.
+Als Beispiel Freiberg alle Straßen mit Breite: 97.26%, 93,44% und 5,08%.
+Sättigung der Straßen ist erreicht, es kann also eine Aussage getroffen werden.
+Sättigung des “width” ist zwar noch nicht Erreicht aber schon relativ hoch. Es ist also davon auszugehen, dass sich das Verhältniss nicht mehr groß ändern wird.
+Das Verhältniss ist 5,08% der Straßen haben eine eingetragende Breite. Das ist sehr wenig und eignet sich nicht für eine Bewertung R4R.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ohsome_results</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;Freiberg, Sachsen&quot;</span>
+<span class="n">ohsome_results</span><span class="p">[</span><span class="n">city</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_city</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+<span class="n">plot_city</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">ohsome_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2657c521f720f444a1d0489bf4ae2ac5d83e621b5dd4a202121378e13bd3da5c.png" src="../_images/2657c521f720f444a1d0489bf4ae2ac5d83e621b5dd4a202121378e13bd3da5c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;Dresden&quot;</span>
+<span class="n">ohsome_results</span><span class="p">[</span><span class="n">city</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_city</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+<span class="n">plot_city</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">ohsome_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f4d150af2be80ffb78ba93f471574f5a65871d62cac0c801e66c3fadf5dcf109.png" src="../_images/f4d150af2be80ffb78ba93f471574f5a65871d62cac0c801e66c3fadf5dcf109.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./prototypes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Empty</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../book/bib.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnisse">Ergebnisse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Martin Plank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
