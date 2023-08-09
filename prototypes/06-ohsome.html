@@ -642,6 +642,7 @@ percentage: result
     <span class="n">results_base_line</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">city</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="n">filter_base_line</span><span class="p">)</span>
     <span class="n">tags_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">tag_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">filter_all</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> and geometry:line&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">primary_filter</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">secondary_filter</span> <span class="ow">in</span> <span class="n">secondary_filters</span><span class="p">:</span>
 
@@ -657,6 +658,17 @@ percentage: result
             <span class="s2">&quot;results_with_tag&quot;</span><span class="p">:</span> <span class="n">result_with_tag</span><span class="p">,</span>
             <span class="s2">&quot;percentage_with_tag&quot;</span><span class="p">:</span> <span class="n">percentage_with_tag</span>
         <span class="p">}</span>
+        <span class="n">filter_all</span> <span class="o">+=</span> <span class="s2">&quot; and </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secondary_filter</span><span class="p">)</span>
+
+    <span class="n">result_with_all_tag</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">city</span><span class="p">,</span> <span class="n">filter_string</span><span class="o">=</span><span class="n">filter_all</span><span class="p">)</span>
+    <span class="n">percentage_with_all_tag</span> <span class="o">=</span> <span class="p">(</span><span class="n">result_with_all_tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;highest_count&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span>
+                               <span class="n">results_base_line</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;highest_count&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">tag_dict</span><span class="p">[</span><span class="n">filter_all</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;results_with_tag&quot;</span><span class="p">:</span> <span class="n">result_with_all_tag</span><span class="p">,</span>
+        <span class="s2">&quot;percentage_with_tag&quot;</span><span class="p">:</span> <span class="n">percentage_with_all_tag</span>
+    <span class="p">}</span>
+
     <span class="n">tag_dict</span><span class="p">[</span><span class="s2">&quot;results_no_tag&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_base_line</span>
     <span class="n">tags_dict</span><span class="p">[</span><span class="n">primary_filter</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag_dict</span>
     <span class="k">return</span> <span class="n">tags_dict</span>
@@ -672,9 +684,9 @@ percentage: result
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_city</span><span class="p">(</span><span class="n">city</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">primary_filter</span><span class="o">=</span><span class="s2">&quot;highway=*&quot;</span><span class="p">,</span> <span class="n">secondary_filters</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;width=*&quot;</span><span class="p">,</span> <span class="s2">&quot;smoothness=*&quot;</span><span class="p">,</span> <span class="s2">&quot;surface=*&quot;</span><span class="p">,</span> <span class="s2">&quot;lit=*&quot;</span><span class="p">]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_city</span><span class="p">(</span><span class="n">city</span><span class="o">=</span><span class="s2">&quot;Freiberg, Sachsen&quot;</span><span class="p">,</span> <span class="n">primary_filter</span><span class="o">=</span><span class="s2">&quot;highway=*&quot;</span><span class="p">,</span> <span class="n">secondary_filters</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;width=*&quot;</span><span class="p">,</span> <span class="s2">&quot;smoothness=*&quot;</span><span class="p">,</span> <span class="s2">&quot;surface=*&quot;</span><span class="p">,</span> <span class="s2">&quot;lit=*&quot;</span><span class="p">],</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">city_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="s2">&quot;ohsome_results&quot;</span> <span class="o">+</span> <span class="n">city</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">city_file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">city_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">force</span><span class="p">:</span>
         <span class="n">result_city</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">city_file</span><span class="p">)))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -794,7 +806,7 @@ Das Verhältniss ist 5,08% der Straßen haben eine eingetragende Breite. Das ist
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2657c521f720f444a1d0489bf4ae2ac5d83e621b5dd4a202121378e13bd3da5c.png" src="../_images/2657c521f720f444a1d0489bf4ae2ac5d83e621b5dd4a202121378e13bd3da5c.png" />
+<img alt="../_images/2bb1ff2f3f9f11949f32ecc2780802fc3dd537e008c7aed3121257b66d9b2b5b.png" src="../_images/2bb1ff2f3f9f11949f32ecc2780802fc3dd537e008c7aed3121257b66d9b2b5b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -806,7 +818,19 @@ Das Verhältniss ist 5,08% der Straßen haben eine eingetragende Breite. Das ist
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f4d150af2be80ffb78ba93f471574f5a65871d62cac0c801e66c3fadf5dcf109.png" src="../_images/f4d150af2be80ffb78ba93f471574f5a65871d62cac0c801e66c3fadf5dcf109.png" />
+<img alt="../_images/673fc7bf0bbfc978ec5beab075a076eed1131443472f8ae8fd4ab476f95e98b4.png" src="../_images/673fc7bf0bbfc978ec5beab075a076eed1131443472f8ae8fd4ab476f95e98b4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;Leipzig&quot;</span>
+<span class="n">ohsome_results</span><span class="p">[</span><span class="n">city</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_city</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+<span class="n">plot_city</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">ohsome_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/288964395978fcfb3e140ce7dc4597a7bcb5f9c1c4afd1bb32b18ed8fdad33ed.png" src="../_images/288964395978fcfb3e140ce7dc4597a7bcb5f9c1c4afd1bb32b18ed8fdad33ed.png" />
 </div>
 </div>
 </section>
