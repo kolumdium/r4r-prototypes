@@ -1,0 +1,2146 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Wegpunkte &#8212; R4R Prototypes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prototypes/06-02-osmway-to-yaml';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://kolumdium.github.io/r4r-prototypes-public/prototypes/06-02-osmway-to-yaml.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bicycle" href="../book/prototypes/07-bicycle/bicycle.html" />
+    <link rel="prev" title="Robot" href="../book/prototypes/06-robot/robot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../book/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="R4R Prototypes - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="R4R Prototypes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Allgemeine Informationen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/basics.html">Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/r4r/r4r.html">Das Projekt Ready for Smart City Robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/begriffe.html">Begrifflichkeiten und Erklärungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/folium/folium.html">Folium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/folium/foliumBasics.html">Folium Basics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/osm/osm.html">OSM Infos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/osmTags.html">OSM Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/overpass.html">Overpass und Overpass Turbo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/overpy.html">Overpy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/osmnx/osmnx.html">OSMNX</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osmnx/osmnxBasics.html">OSMnx Basics</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prototypen</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/01-tagging/tagging.html">Tagging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-01-tag-stats.html">OSM Tag Stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-02-tag-filtering.html">Tagfilter am Beispiel von Freiberg, Sachsen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/02-easy-analytics/easy-analytics.html">Easy Analytics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-01-show-speeds.html">Geschwindigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-02-traveltime.html">Traveltimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-03-Stra%C3%9Fen-Haeuser-plot.html">Buildings in Freiberg</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/03-population/population.html">Population Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="03-01-population.html">Population</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/04-ohsome/ohsome.html">Ohsome API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="04-01-ohsome.html">Ohsome API Test</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/05-reachability/reachability.html">Reachability Analytics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="05-01-isochronen-Freiberg.html">Isochronen in Freiberg (Dominos Beispiel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-02-isochronen-Dresden.html">Isochronen in Dresden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-03-isochronen-Schkeuditz.html">Isochronen in Schkeuditz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-04-isochronen-Selessen.html">Isochronen in Selessen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../book/prototypes/06-robot/robot.html">Robot</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Wegpunkte</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/07-bicycle/bicycle.html">Bicycle</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/prototypes/10-r4r/r4r.html">R4R</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/42-random/random.html">Random Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="42-01-Schkeuditz-OPNV.html">ÖPNV Schkeuditz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="42-02-Alkis.html">Alkis Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="42-04-Cycling-Quality-Index.html">Fetching Data for Cycling Quality Index</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anhang</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../book/bib.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/debug.html">Debug Infos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/kolumdium/r4r-prototypes-public/master?urlpath=tree/prototypes/06-02-osmway-to-yaml.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/kolumdium/r4r-prototypes-public/blob/master/prototypes/06-02-osmway-to-yaml.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes-public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes-public/edit/main/prototypes/06-02-osmway-to-yaml.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes-public/issues/new?title=Issue%20on%20page%20%2Fprototypes/06-02-osmway-to-yaml.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/prototypes/06-02-osmway-to-yaml.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Wegpunkte</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wegpunkte</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abschnitte">Abschnitte</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volle-runde">Volle Runde</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="wegpunkte">
+<h1>Wegpunkte<a class="headerlink" href="#wegpunkte" title="Link to this heading">#</a></h1>
+<section id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h2>
+<p>Beschreibung wie man die Wegpunkte macht.
+Aber eigentlich mach ich nur ne Line mit JOSM, geb der “find_me” = “irgendein identifier”, exportier das osm, suche den identifier und gebe die wegpunkte in yaml aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+<span class="kn">import</span> <span class="nn">pyproj</span> <span class="c1"># we need this for jupyter-book to build right</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">geopy.distance</span> <span class="kn">import</span> <span class="n">geodesic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_track_length</span><span class="p">(</span><span class="n">coordinates</span><span class="p">):</span>
+    <span class="n">track_length</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">start_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">coordinates</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">])</span>
+        <span class="n">end_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">coordinates</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span>
+                     <span class="n">coordinates</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">])</span>
+        <span class="n">track_length</span> <span class="o">+=</span> <span class="n">geodesic</span><span class="p">(</span><span class="n">start_point</span><span class="p">,</span> <span class="n">end_point</span><span class="p">)</span><span class="o">.</span><span class="n">meters</span>
+    <span class="k">return</span> <span class="n">track_length</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_df</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">features_from_xml</span><span class="p">(</span>
+    <span class="s2">&quot;out/Testing GPS Waypoint making-Schkeuditz.osm&quot;</span><span class="p">)</span>
+
+
+<span class="n">geo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>TMC:cid_58:tabcd_1:Class</th>
+      <th>TMC:cid_58:tabcd_1:Direction</th>
+      <th>TMC:cid_58:tabcd_1:LCLversion</th>
+      <th>TMC:cid_58:tabcd_1:LocationCode</th>
+      <th>TMC:cid_58:tabcd_1:NextLocationCode</th>
+      <th>TMC:cid_58:tabcd_1:PrevLocationCode</th>
+      <th>geometry</th>
+      <th>highway</th>
+      <th>traffic_signals</th>
+      <th>traffic_signals:direction</th>
+      <th>...</th>
+      <th>ref:nuts:2</th>
+      <th>postal_code_level</th>
+      <th>election:parliament</th>
+      <th>election:part</th>
+      <th>election:year</th>
+      <th>political</th>
+      <th>protection_title</th>
+      <th>ref:DE-SN</th>
+      <th>ref:WDPA</th>
+      <th>short_protection_title</th>
+    </tr>
+    <tr>
+      <th>element_type</th>
+      <th>osmid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">node</th>
+      <th>20904797</th>
+      <td>Point</td>
+      <td>negative</td>
+      <td>9.00</td>
+      <td>24611</td>
+      <td>51594</td>
+      <td>24610</td>
+      <td>POINT (12.19202 51.40058)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20904798</th>
+      <td>Point</td>
+      <td>positive</td>
+      <td>9.00</td>
+      <td>24611</td>
+      <td>51594</td>
+      <td>24610</td>
+      <td>POINT (12.19210 51.40047)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30390618</th>
+      <td>Point</td>
+      <td>negative</td>
+      <td>9.00</td>
+      <td>51594</td>
+      <td>51595</td>
+      <td>24611</td>
+      <td>POINT (12.20483 51.40291)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30390642</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>POINT (12.22023 51.39386)</td>
+      <td>traffic_signals</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30390661</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>POINT (12.22022 51.39355)</td>
+      <td>traffic_signals</td>
+      <td>signal</td>
+      <td>backward</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 861 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_nodes</span> <span class="o">=</span> <span class="n">geo_df</span><span class="p">[</span><span class="n">geo_df</span><span class="p">[</span><span class="s1">&#39;findme&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+<span class="n">filtered_nodes</span> <span class="o">=</span> <span class="n">filtered_nodes</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">filtered_nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>geometry</th>
+      <th>nodes</th>
+      <th>findme</th>
+    </tr>
+    <tr>
+      <th>element_type</th>
+      <th>osmid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="7" valign="top">way</th>
+      <th>-10295</th>
+      <td>LINESTRING (12.22267 51.39578, 12.22270 51.395...</td>
+      <td>[-25544, -25545, -25998, -26008, -25546, -2604...</td>
+      <td>Rathaus zu Bürgeramt</td>
+    </tr>
+    <tr>
+      <th>-10371</th>
+      <td>LINESTRING (12.22107 51.39515, 12.22104 51.395...</td>
+      <td>[-25724, -25734, -25644, -25645, -25646, -2564...</td>
+      <td>Ringstraße zu Amtsgasse über Markt</td>
+    </tr>
+    <tr>
+      <th>-12006</th>
+      <td>LINESTRING (12.22270 51.39582, 12.22270 51.395...</td>
+      <td>[-25545, -25998, -26008, -25546, -26041, -2554...</td>
+      <td>Rathaus zu Post</td>
+    </tr>
+    <tr>
+      <th>-12087</th>
+      <td>LINESTRING (12.22107 51.39515, 12.22107 51.395...</td>
+      <td>[-27019, -27020, -27021, -27022, -27023, -2702...</td>
+      <td>Ringstraße zu Amtsgasse</td>
+    </tr>
+    <tr>
+      <th>-12376</th>
+      <td>LINESTRING (12.21968 51.39606, 12.21971 51.396...</td>
+      <td>[-25606, -25604, -25603, -25602, -26656, -2560...</td>
+      <td>Bürgeramt zu Rathausplatz</td>
+    </tr>
+    <tr>
+      <th>-12491</th>
+      <td>LINESTRING (12.22147 51.39575, 12.22147 51.395...</td>
+      <td>[-25628, -26709, -26676, -25629, -25630, -2563...</td>
+      <td>Rathausplatz zu Ringstraße</td>
+    </tr>
+    <tr>
+      <th>-12537</th>
+      <td>LINESTRING (12.22270 51.39582, 12.22269 51.395...</td>
+      <td>[-25998, -26008, -25546, -26041, -25547, -2607...</td>
+      <td>Rathaus zu Rathausplatz</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_nodes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">lat</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">lon</span><span class="p">,</span> <span class="s1">&#39;yaw&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">]</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;latitude&#39;: 51.39578111236, &#39;longitude&#39;: 12.22267493572, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599354556, &#39;longitude&#39;: 12.22191620585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22190128623, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762477, &#39;longitude&#39;: 12.22188636627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599814764, &#39;longitude&#39;: 12.22187899036, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762466, &#39;longitude&#39;: 12.2218707761, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22186440585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599344096, &#39;longitude&#39;: 12.22185954418, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597398626, &#39;longitude&#39;: 12.22183808651, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39593779632, &#39;longitude&#39;: 12.2218072411, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585704871, &#39;longitude&#39;: 12.22177740153, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581458294, &#39;longitude&#39;: 12.22174387392, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579873672, &#39;longitude&#39;: 12.22173138488, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957929838, &#39;longitude&#39;: 12.22172367378, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579115338, &#39;longitude&#39;: 12.22171923137, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578995069, &#39;longitude&#39;: 12.22171470489, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578911377, &#39;longitude&#39;: 12.22171076565, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578859079, &#39;longitude&#39;: 12.22170632324, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957882247, &#39;longitude&#39;: 12.22170255139, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578843405, &#39;longitude&#39;: 12.22169827636, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578885228, &#39;longitude&#39;: 12.22169358275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579000283, &#39;longitude&#39;: 12.22168955944, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579261787, &#39;longitude&#39;: 12.22168251839, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579518031, &#39;longitude&#39;: 12.22167589693, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579742911, &#39;longitude&#39;: 12.22166852086, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580098552, &#39;longitude&#39;: 12.22165334936, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958023974, &#39;longitude&#39;: 12.22164463243, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580307743, &#39;longitude&#39;: 12.22163356807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395802502, &#39;longitude&#39;: 12.22162711426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580114226, &#39;longitude&#39;: 12.22162309094, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579946873, &#39;longitude&#39;: 12.22161873235, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579695859, &#39;longitude&#39;: 12.22161613371, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22160079483, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578367479, &#39;longitude&#39;: 12.22159266463, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578048478, &#39;longitude&#39;: 12.2215826061, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577849731, &#39;longitude&#39;: 12.2215735539, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577854977, &#39;longitude&#39;: 12.22156441737, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22150716897, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579047351, &#39;longitude&#39;: 12.22150054752, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579444814, &#39;longitude&#39;: 12.22149644039, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579905035, &#39;longitude&#39;: 12.22149199798, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580286824, &#39;longitude&#39;: 12.22148906406, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581149722, &#39;longitude&#39;: 12.221485041, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582064948, &#39;longitude&#39;: 12.22148235854, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582734344, &#39;longitude&#39;: 12.22148085005, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583555419, &#39;longitude&#39;: 12.22148143678, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584444496, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958573102, &#39;longitude&#39;: 12.22149157863, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586070939, &#39;longitude&#39;: 12.22149174652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958641611, &#39;longitude&#39;: 12.22149007006, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586672363, &#39;longitude&#39;: 12.22148797466, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586855421, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39588152404, &#39;longitude&#39;: 12.22146157142, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39590537178, &#39;longitude&#39;: 12.22140122171, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39592461732, &#39;longitude&#39;: 12.22135830637, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39594344446, &#39;longitude&#39;: 12.221321426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596750136, &#39;longitude&#39;: 12.22124297138, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596886094, &#39;longitude&#39;: 12.22123794249, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597126663, &#39;longitude&#39;: 12.22123341626, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597607817, &#39;longitude&#39;: 12.2212245312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597822221, &#39;longitude&#39;: 12.22122042431, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3959806802, &#39;longitude&#39;: 12.22121715537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39598611915, &#39;longitude&#39;: 12.22121053367, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599124446, &#39;longitude&#39;: 12.22119997222, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599741558, &#39;longitude&#39;: 12.22118295696, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600902553, &#39;longitude&#39;: 12.2211489266, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601425528, &#39;longitude&#39;: 12.22112847475, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601979893, &#39;longitude&#39;: 12.22110852566, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960415547, &#39;longitude&#39;: 12.22102001276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39607607104, &#39;longitude&#39;: 12.22087249126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611937332, &#39;longitude&#39;: 12.22067266669, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613840958, &#39;longitude&#39;: 12.22053587403, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615828259, &#39;longitude&#39;: 12.22045473721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617072926, &#39;longitude&#39;: 12.22040377541, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22036320683, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617721413, &#39;longitude&#39;: 12.2203266619, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22029196065, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3961738671, &#39;longitude&#39;: 12.22025508044, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39616936963, &#39;longitude&#39;: 12.22021903809, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615263447, &#39;longitude&#39;: 12.22009699758, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614384851, &#39;longitude&#39;: 12.22000312027, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613851407, &#39;longitude&#39;: 12.21998568607, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613087865, &#39;longitude&#39;: 12.21997596307, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612543982, &#39;longitude&#39;: 12.21996355768, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612146522, &#39;longitude&#39;: 12.21994813498, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611351601, &#39;longitude&#39;: 12.21989616718, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610985509, &#39;longitude&#39;: 12.21986632777, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610389328, &#39;longitude&#39;: 12.21983883496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39608213755, &#39;longitude&#39;: 12.21976473894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606623911, &#39;longitude&#39;: 12.21971075948, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605947448, &#39;longitude&#39;: 12.21968473888, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605473367, &#39;longitude&#39;: 12.21966650303, &#39;yaw&#39;: 0.0}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the unique ways from the filtered_nodes GeoDataFrame</span>
+<span class="n">unique_ways</span> <span class="o">=</span> <span class="n">filtered_nodes</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s1">&#39;osmid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Iterate over each unique way</span>
+<span class="k">for</span> <span class="n">way</span> <span class="ow">in</span> <span class="n">unique_ways</span><span class="p">:</span>
+    <span class="n">linestring</span> <span class="o">=</span> <span class="n">filtered_nodes</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;way&#39;</span><span class="p">,</span> <span class="n">way</span><span class="p">),</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+    <span class="c1"># print(linestring)</span>
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">linestring</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">lat</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">lon</span><span class="p">,</span> <span class="s1">&#39;yaw&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">]</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">calculate_track_length</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Create a YAML file path for the current way</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">filtered_nodes</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;way&#39;</span><span class="p">,</span> <span class="n">way</span><span class="p">),</span> <span class="s1">&#39;findme&#39;</span><span class="p">]</span>
+    <span class="n">yaml_file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;out/way_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">.yaml&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Writing coordinates for way </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">yaml_file_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length of the track: </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s1"> meters&#39;</span><span class="p">)</span>
+    <span class="c1"># Write the coordinates to the YAML file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">yaml_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">yaml_file</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing coordinates for way Rathaus zu Bürgeramt to out/way_Rathaus zu Bürgeramt.yaml
+Length of the track: 255.0291961740947 meters
+Writing coordinates for way Ringstraße zu Amtsgasse über Markt to out/way_Ringstraße zu Amtsgasse über Markt.yaml
+Length of the track: 172.38721851770867 meters
+Writing coordinates for way Rathaus zu Post to out/way_Rathaus zu Post.yaml
+Length of the track: 119.9193199592013 meters
+Writing coordinates for way Ringstraße zu Amtsgasse to out/way_Ringstraße zu Amtsgasse.yaml
+Length of the track: 136.8732919642016 meters
+Writing coordinates for way Bürgeramt zu Rathausplatz to out/way_Bürgeramt zu Rathausplatz.yaml
+Length of the track: 148.96582411846327 meters
+Writing coordinates for way Rathausplatz zu Ringstraße to out/way_Rathausplatz zu Ringstraße.yaml
+Length of the track: 73.16431597977983 meters
+Writing coordinates for way Rathaus zu Rathausplatz to out/way_Rathaus zu Rathausplatz.yaml
+Length of the track: 108.28259653303058 meters
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reverse</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Bürgeramt&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">way</span> <span class="ow">in</span> <span class="n">reverse</span><span class="p">:</span>
+    <span class="n">way_df</span> <span class="o">=</span> <span class="n">filtered_nodes</span><span class="p">[</span><span class="n">filtered_nodes</span><span class="p">[</span><span class="s1">&#39;findme&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">way</span><span class="p">]</span>
+    <span class="n">linestring</span> <span class="o">=</span> <span class="n">way_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span>
+    <span class="c1"># linestring = filtered_nodes.loc[(&#39;findme&#39;, way), &#39;geometry&#39;]</span>
+    <span class="c1"># print(linestring)</span>
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">linestring</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">lat</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">lon</span><span class="p">,</span> <span class="s1">&#39;yaw&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">]</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">calculate_track_length</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Create a YAML file path for the current way</span>
+    <span class="c1"># name = filtered_nodes.loc[(&#39;way&#39;, way), &#39;findme&#39;]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">way</span>
+    <span class="n">reversed_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; zu &#39;</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">reversed_name</span> <span class="o">=</span> <span class="s1">&#39; zu &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">reversed_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">reversed_name</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">reversed_name</span>
+    <span class="n">yaml_file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;out/way_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">.yaml&#39;</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Writing coordinates for way </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">yaml_file_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length of the track: </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s1"> meters&#39;</span><span class="p">)</span>
+    <span class="c1"># Write the coordinates to the YAML file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">yaml_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">yaml_file</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bürgeramt zu Rathaus
+Writing coordinates for way Bürgeramt zu Rathaus to out/way_Bürgeramt zu Rathaus.yaml
+Length of the track: 255.0291961740947 meters
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="abschnitte">
+<h1>Abschnitte<a class="headerlink" href="#abschnitte" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Rathaus -&gt; Bürgeramt</p></li>
+<li><p>Bürgeramt -&gt; Rathaus</p></li>
+<li><p>Bürgeramt -&gt; Rathausplatz</p></li>
+<li><p>Rathausplatz -&gt; Ringstraße</p></li>
+<li><p>Ringstraße -&gt; Amtsgasse</p></li>
+<li><p>Ringstraße -&gt; Markt -&gt; Amtsgasse</p></li>
+<li><p>Rathaus -&gt; Post</p></li>
+</ul>
+<section id="volle-runde">
+<h2>Volle Runde<a class="headerlink" href="#volle-runde" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Route</p>
+<ul>
+<li><p>Rathaus -&gt; Bürgeramt -&gt; Rathausplatz -&gt; Ringstraße -&gt; Amtsgasse -&gt; Markt -&gt; Rathaus -&gt; Post -&gt; Rathaus</p></li>
+<li><p>Rathaus zu Bürgeramt</p></li>
+<li><p>Bürgeramt zu Rathausplatz</p></li>
+<li><p>Rathausplatz zu Ringstraße</p></li>
+<li><p>Ringstraße zu Amtsgasse (über markt)</p></li>
+<li><p>Amtsgasse zu Ringstraße (über markt) (reverse)</p></li>
+<li><p>Ringstraße zu Rathausplatz (reverse)</p></li>
+<li><p>Rathausplatz zu Rathaus (reverse)</p></li>
+<li><p>Rathaus zu Post</p></li>
+</ul>
+</li>
+<li><p>Alternative:</p>
+<ul>
+<li><p>Rathaus -&gt; Bürgeramt -&gt; Rathausplatz -&gt; Ringstraße -&gt; Amtsgasse -&gt; Rathaus -&gt; Post -&gt; Rathaus</p></li>
+<li><p>Rathaus zu Bürgeramt</p></li>
+<li><p>Bürgeramt zu Rathausplatz</p></li>
+<li><p>Rathausplatz zu Ringstraße</p></li>
+<li><p>Ringstraße zu Amtsgasse</p></li>
+<li><p>Amtsgasse zu Ringstraße (reverse)</p></li>
+<li><p>Ringstraße zu Rathausplatz (reverse)</p></li>
+<li><p>Rathausplatz zu Rathaus (reverse)</p></li>
+<li><p>Rathaus zu Post</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># o = filtered_nodes[filtered_nodes[&#39;findme&#39;] == &quot;Rathausplatz zu Ringstraße&quot;]</span>
+<span class="c1"># o.iloc[0]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_coords</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">way_name</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">way_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;findme&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">way_name</span><span class="p">]</span>
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">way_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">lat</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">lon</span><span class="p">,</span> <span class="s1">&#39;yaw&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">reverse</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Bürgeramt&quot;</span><span class="p">,</span> <span class="s2">&quot;Bürgeramt zu Rathausplatz&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Rathausplatz zu Ringstraße&quot;</span><span class="p">,</span> <span class="s2">&quot;Ringstraße zu Amtsgasse über Markt&quot;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ringstraße zu Amtsgasse über Markt&quot;</span><span class="p">,</span> <span class="s2">&quot;Rathausplatz zu Ringstraße&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Rathaus zu Rathausplatz&quot;</span><span class="p">]</span>  <span class="c1"># all reversed</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Post&quot;</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Post&quot;</span><span class="p">]</span>  <span class="c1"># reversed</span>
+<span class="n">full_route</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">full_route</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">full_route</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">full_route</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">full_route</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">full_route</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;latitude&#39;: 51.39578111236, &#39;longitude&#39;: 12.22267493572, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599354556, &#39;longitude&#39;: 12.22191620585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22190128623, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762477, &#39;longitude&#39;: 12.22188636627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599814764, &#39;longitude&#39;: 12.22187899036, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762466, &#39;longitude&#39;: 12.2218707761, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22186440585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599344096, &#39;longitude&#39;: 12.22185954418, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597398626, &#39;longitude&#39;: 12.22183808651, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39593779632, &#39;longitude&#39;: 12.2218072411, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585704871, &#39;longitude&#39;: 12.22177740153, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581458294, &#39;longitude&#39;: 12.22174387392, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579873672, &#39;longitude&#39;: 12.22173138488, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957929838, &#39;longitude&#39;: 12.22172367378, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579115338, &#39;longitude&#39;: 12.22171923137, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578995069, &#39;longitude&#39;: 12.22171470489, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578911377, &#39;longitude&#39;: 12.22171076565, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578859079, &#39;longitude&#39;: 12.22170632324, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957882247, &#39;longitude&#39;: 12.22170255139, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578843405, &#39;longitude&#39;: 12.22169827636, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578885228, &#39;longitude&#39;: 12.22169358275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579000283, &#39;longitude&#39;: 12.22168955944, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579261787, &#39;longitude&#39;: 12.22168251839, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579518031, &#39;longitude&#39;: 12.22167589693, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579742911, &#39;longitude&#39;: 12.22166852086, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580098552, &#39;longitude&#39;: 12.22165334936, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958023974, &#39;longitude&#39;: 12.22164463243, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580307743, &#39;longitude&#39;: 12.22163356807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395802502, &#39;longitude&#39;: 12.22162711426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580114226, &#39;longitude&#39;: 12.22162309094, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579946873, &#39;longitude&#39;: 12.22161873235, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579695859, &#39;longitude&#39;: 12.22161613371, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22160079483, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578367479, &#39;longitude&#39;: 12.22159266463, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578048478, &#39;longitude&#39;: 12.2215826061, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577849731, &#39;longitude&#39;: 12.2215735539, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577854977, &#39;longitude&#39;: 12.22156441737, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22150716897, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579047351, &#39;longitude&#39;: 12.22150054752, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579444814, &#39;longitude&#39;: 12.22149644039, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579905035, &#39;longitude&#39;: 12.22149199798, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580286824, &#39;longitude&#39;: 12.22148906406, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581149722, &#39;longitude&#39;: 12.221485041, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582064948, &#39;longitude&#39;: 12.22148235854, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582734344, &#39;longitude&#39;: 12.22148085005, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583555419, &#39;longitude&#39;: 12.22148143678, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584444496, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958573102, &#39;longitude&#39;: 12.22149157863, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586070939, &#39;longitude&#39;: 12.22149174652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958641611, &#39;longitude&#39;: 12.22149007006, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586672363, &#39;longitude&#39;: 12.22148797466, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586855421, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39588152404, &#39;longitude&#39;: 12.22146157142, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39590537178, &#39;longitude&#39;: 12.22140122171, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39592461732, &#39;longitude&#39;: 12.22135830637, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39594344446, &#39;longitude&#39;: 12.221321426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596750136, &#39;longitude&#39;: 12.22124297138, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596886094, &#39;longitude&#39;: 12.22123794249, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597126663, &#39;longitude&#39;: 12.22123341626, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597607817, &#39;longitude&#39;: 12.2212245312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597822221, &#39;longitude&#39;: 12.22122042431, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3959806802, &#39;longitude&#39;: 12.22121715537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39598611915, &#39;longitude&#39;: 12.22121053367, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599124446, &#39;longitude&#39;: 12.22119997222, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599741558, &#39;longitude&#39;: 12.22118295696, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600902553, &#39;longitude&#39;: 12.2211489266, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601425528, &#39;longitude&#39;: 12.22112847475, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601979893, &#39;longitude&#39;: 12.22110852566, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960415547, &#39;longitude&#39;: 12.22102001276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39607607104, &#39;longitude&#39;: 12.22087249126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611937332, &#39;longitude&#39;: 12.22067266669, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613840958, &#39;longitude&#39;: 12.22053587403, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615828259, &#39;longitude&#39;: 12.22045473721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617072926, &#39;longitude&#39;: 12.22040377541, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22036320683, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617721413, &#39;longitude&#39;: 12.2203266619, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22029196065, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3961738671, &#39;longitude&#39;: 12.22025508044, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39616936963, &#39;longitude&#39;: 12.22021903809, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615263447, &#39;longitude&#39;: 12.22009699758, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614384851, &#39;longitude&#39;: 12.22000312027, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613851407, &#39;longitude&#39;: 12.21998568607, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613087865, &#39;longitude&#39;: 12.21997596307, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612543982, &#39;longitude&#39;: 12.21996355768, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612146522, &#39;longitude&#39;: 12.21994813498, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611351601, &#39;longitude&#39;: 12.21989616718, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610985509, &#39;longitude&#39;: 12.21986632777, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610389328, &#39;longitude&#39;: 12.21983883496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39608213755, &#39;longitude&#39;: 12.21976473894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606623911, &#39;longitude&#39;: 12.21971075948, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605947448, &#39;longitude&#39;: 12.21968473888, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605473367, &#39;longitude&#39;: 12.21966650303, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605947448, &#39;longitude&#39;: 12.21968473888, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606623911, &#39;longitude&#39;: 12.21971075948, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39608213755, &#39;longitude&#39;: 12.21976473894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610389328, &#39;longitude&#39;: 12.21983883496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610985509, &#39;longitude&#39;: 12.21986632777, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611351601, &#39;longitude&#39;: 12.21989616718, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612146522, &#39;longitude&#39;: 12.21994813498, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612543982, &#39;longitude&#39;: 12.21996355768, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613087865, &#39;longitude&#39;: 12.21997596307, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613851407, &#39;longitude&#39;: 12.21998568607, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614384851, &#39;longitude&#39;: 12.22000312027, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615263447, &#39;longitude&#39;: 12.22009699758, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39616936963, &#39;longitude&#39;: 12.22021903809, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3961738671, &#39;longitude&#39;: 12.22025508044, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22029196065, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617721413, &#39;longitude&#39;: 12.2203266619, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22036320683, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617072926, &#39;longitude&#39;: 12.22040377541, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615828259, &#39;longitude&#39;: 12.22045473721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613840958, &#39;longitude&#39;: 12.22053587403, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611937332, &#39;longitude&#39;: 12.22067266669, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39607607104, &#39;longitude&#39;: 12.22087249126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960415547, &#39;longitude&#39;: 12.22102001276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601979893, &#39;longitude&#39;: 12.22110852566, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601425528, &#39;longitude&#39;: 12.22112847475, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600902553, &#39;longitude&#39;: 12.2211489266, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599741558, &#39;longitude&#39;: 12.22118295696, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599124446, &#39;longitude&#39;: 12.22119997222, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39598611915, &#39;longitude&#39;: 12.22121053367, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3959806802, &#39;longitude&#39;: 12.22121715537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597822221, &#39;longitude&#39;: 12.22122042431, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597607817, &#39;longitude&#39;: 12.2212245312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597126663, &#39;longitude&#39;: 12.22123341626, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596886094, &#39;longitude&#39;: 12.22123794249, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596750136, &#39;longitude&#39;: 12.22124297138, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39594344446, &#39;longitude&#39;: 12.221321426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39592461732, &#39;longitude&#39;: 12.22135830637, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39590537178, &#39;longitude&#39;: 12.22140122171, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39588152404, &#39;longitude&#39;: 12.22146157142, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586855421, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586672363, &#39;longitude&#39;: 12.22148797466, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958641611, &#39;longitude&#39;: 12.22149007006, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586070939, &#39;longitude&#39;: 12.22149174652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958573102, &#39;longitude&#39;: 12.22149157863, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584444496, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583555419, &#39;longitude&#39;: 12.22148143678, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582734344, &#39;longitude&#39;: 12.22148085005, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582064948, &#39;longitude&#39;: 12.22148235854, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581149722, &#39;longitude&#39;: 12.221485041, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580286814, &#39;longitude&#39;: 12.22148755549, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579544185, &#39;longitude&#39;: 12.22148722021, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39574188888, &#39;longitude&#39;: 12.22146626545, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39572944199, &#39;longitude&#39;: 12.2214550337, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39571364814, &#39;longitude&#39;: 12.22144329887, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39570025988, &#39;longitude&#39;: 12.22143977847, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39568268778, &#39;longitude&#39;: 12.22143441405, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39565999037, &#39;longitude&#39;: 12.2214241883, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39563520124, &#39;longitude&#39;: 12.22141463276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39560643724, &#39;longitude&#39;: 12.22140390409, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39559399032, &#39;longitude&#39;: 12.2213995455, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558719157, &#39;longitude&#39;: 12.22139619274, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558102041, &#39;longitude&#39;: 12.22139099596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39556867817, &#39;longitude&#39;: 12.22138194334, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39553928666, &#39;longitude&#39;: 12.22135998275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39549828494, &#39;longitude&#39;: 12.22132746097, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39545017064, &#39;longitude&#39;: 12.22128756311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39539578049, &#39;longitude&#39;: 12.22124565359, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39535143156, &#39;longitude&#39;: 12.22121011432, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39530771016, &#39;longitude&#39;: 12.22117692199, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39526273356, &#39;longitude&#39;: 12.22114138272, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39523009935, &#39;longitude&#39;: 12.2211205956, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39519830188, &#39;longitude&#39;: 12.2210981321, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39516566763, &#39;longitude&#39;: 12.22107969191, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515060565, &#39;longitude&#39;: 12.22106929835, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515060565, &#39;longitude&#39;: 12.22106929835, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39510060823, &#39;longitude&#39;: 12.22103610601, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39507634168, &#39;longitude&#39;: 12.22101867165, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39505730498, &#39;longitude&#39;: 12.22100358423, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39503241083, &#39;longitude&#39;: 12.22098648515, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3949813673, &#39;longitude&#39;: 12.22095496919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39494433979, &#39;longitude&#39;: 12.22092915293, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39491442489, &#39;longitude&#39;: 12.22090970691, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39487572376, &#39;longitude&#39;: 12.22088221427, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39481380189, &#39;longitude&#39;: 12.22084097531, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39476233973, &#39;longitude&#39;: 12.22080912407, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39472991436, &#39;longitude&#39;: 12.22078967806, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39468263603, &#39;longitude&#39;: 12.22077257898, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39462761738, &#39;longitude&#39;: 12.22075045075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39459247236, &#39;longitude&#39;: 12.22073703971, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39455251578, &#39;longitude&#39;: 12.22072094645, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39451297756, &#39;longitude&#39;: 12.22070954707, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3944585863, &#39;longitude&#39;: 12.22069546547, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3943849488, &#39;longitude&#39;: 12.22067300197, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437741768, &#39;longitude&#39;: 12.22067065503, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436946807, &#39;longitude&#39;: 12.22066814063, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436444732, &#39;longitude&#39;: 12.22066529078, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436151855, &#39;longitude&#39;: 12.22065975873, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436005417, &#39;longitude&#39;: 12.22065288557, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39435974048, &#39;longitude&#39;: 12.22064550932, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436068176, &#39;longitude&#39;: 12.22062857805, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436204165, &#39;longitude&#39;: 12.22061416101, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436580721, &#39;longitude&#39;: 12.22057677772, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437427961, &#39;longitude&#39;: 12.22050067021, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437804528, &#39;longitude&#39;: 12.22042489763, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39438181083, &#39;longitude&#39;: 12.22027905252, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437637169, &#39;longitude&#39;: 12.22010035034, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3943843212, &#39;longitude&#39;: 12.22006011721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39439729145, &#39;longitude&#39;: 12.22004368868, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.394419048, &#39;longitude&#39;: 12.22003530677, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39448536354, &#39;longitude&#39;: 12.22002290156, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39456715955, &#39;longitude&#39;: 12.22000479665, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39465376694, &#39;longitude&#39;: 12.2199900445, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39471527063, &#39;longitude&#39;: 12.21998099204, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39471527063, &#39;longitude&#39;: 12.21998099204, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39465376694, &#39;longitude&#39;: 12.2199900445, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39456715955, &#39;longitude&#39;: 12.22000479665, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39448536354, &#39;longitude&#39;: 12.22002290156, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.394419048, &#39;longitude&#39;: 12.22003530677, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39439729145, &#39;longitude&#39;: 12.22004368868, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3943843212, &#39;longitude&#39;: 12.22006011721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437637169, &#39;longitude&#39;: 12.22010035034, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39438181083, &#39;longitude&#39;: 12.22027905252, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437804528, &#39;longitude&#39;: 12.22042489763, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437427961, &#39;longitude&#39;: 12.22050067021, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436580721, &#39;longitude&#39;: 12.22057677772, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436204165, &#39;longitude&#39;: 12.22061416101, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436068176, &#39;longitude&#39;: 12.22062857805, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39435974048, &#39;longitude&#39;: 12.22064550932, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436005417, &#39;longitude&#39;: 12.22065288557, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436151855, &#39;longitude&#39;: 12.22065975873, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436444732, &#39;longitude&#39;: 12.22066529078, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39436946807, &#39;longitude&#39;: 12.22066814063, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39437741768, &#39;longitude&#39;: 12.22067065503, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3943849488, &#39;longitude&#39;: 12.22067300197, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3944585863, &#39;longitude&#39;: 12.22069546547, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39451297756, &#39;longitude&#39;: 12.22070954707, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39455251578, &#39;longitude&#39;: 12.22072094645, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39459247236, &#39;longitude&#39;: 12.22073703971, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39462761738, &#39;longitude&#39;: 12.22075045075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39468263603, &#39;longitude&#39;: 12.22077257898, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39472991436, &#39;longitude&#39;: 12.22078967806, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39476233973, &#39;longitude&#39;: 12.22080912407, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39481380189, &#39;longitude&#39;: 12.22084097531, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39487572376, &#39;longitude&#39;: 12.22088221427, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39491442489, &#39;longitude&#39;: 12.22090970691, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39494433979, &#39;longitude&#39;: 12.22092915293, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3949813673, &#39;longitude&#39;: 12.22095496919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39503241083, &#39;longitude&#39;: 12.22098648515, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39505730498, &#39;longitude&#39;: 12.22100358423, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39507634168, &#39;longitude&#39;: 12.22101867165, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39510060823, &#39;longitude&#39;: 12.22103610601, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515060565, &#39;longitude&#39;: 12.22106929835, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515060565, &#39;longitude&#39;: 12.22106929835, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39516566763, &#39;longitude&#39;: 12.22107969191, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39519830188, &#39;longitude&#39;: 12.2210981321, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39523009935, &#39;longitude&#39;: 12.2211205956, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39526273356, &#39;longitude&#39;: 12.22114138272, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39530771016, &#39;longitude&#39;: 12.22117692199, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39535143156, &#39;longitude&#39;: 12.22121011432, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39539578049, &#39;longitude&#39;: 12.22124565359, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39545017064, &#39;longitude&#39;: 12.22128756311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39549828494, &#39;longitude&#39;: 12.22132746097, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39553928666, &#39;longitude&#39;: 12.22135998275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39556867817, &#39;longitude&#39;: 12.22138194334, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558102041, &#39;longitude&#39;: 12.22139099596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558719157, &#39;longitude&#39;: 12.22139619274, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39559399032, &#39;longitude&#39;: 12.2213995455, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39560643724, &#39;longitude&#39;: 12.22140390409, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39563520124, &#39;longitude&#39;: 12.22141463276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39565999037, &#39;longitude&#39;: 12.2214241883, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39568268778, &#39;longitude&#39;: 12.22143441405, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39570025988, &#39;longitude&#39;: 12.22143977847, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39571364814, &#39;longitude&#39;: 12.22144329887, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39572944199, &#39;longitude&#39;: 12.2214550337, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39574188888, &#39;longitude&#39;: 12.22146626545, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957776606, &#39;longitude&#39;: 12.22148068232, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578289038, &#39;longitude&#39;: 12.22148487328, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957871788, &#39;longitude&#39;: 12.22149308754, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578832935, &#39;longitude&#39;: 12.22150197236, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22150716897, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577854977, &#39;longitude&#39;: 12.22156441737, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577849731, &#39;longitude&#39;: 12.2215735539, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578048478, &#39;longitude&#39;: 12.2215826061, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578367479, &#39;longitude&#39;: 12.22159266463, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22160079483, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579695859, &#39;longitude&#39;: 12.22161613371, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579946873, &#39;longitude&#39;: 12.22161873235, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580114226, &#39;longitude&#39;: 12.22162309094, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395802502, &#39;longitude&#39;: 12.22162711426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580307743, &#39;longitude&#39;: 12.22163356807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958023974, &#39;longitude&#39;: 12.22164463243, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580098552, &#39;longitude&#39;: 12.22165334936, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579742911, &#39;longitude&#39;: 12.22166852086, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579518031, &#39;longitude&#39;: 12.22167589693, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579261787, &#39;longitude&#39;: 12.22168251839, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579000283, &#39;longitude&#39;: 12.22168955944, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578885228, &#39;longitude&#39;: 12.22169358275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578843405, &#39;longitude&#39;: 12.22169827636, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957882247, &#39;longitude&#39;: 12.22170255139, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578859079, &#39;longitude&#39;: 12.22170632324, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578911377, &#39;longitude&#39;: 12.22171076565, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578995069, &#39;longitude&#39;: 12.22171470489, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579115338, &#39;longitude&#39;: 12.22171923137, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957929838, &#39;longitude&#39;: 12.22172367378, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579873672, &#39;longitude&#39;: 12.22173138488, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581458294, &#39;longitude&#39;: 12.22174387392, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585704871, &#39;longitude&#39;: 12.22177740153, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39593779632, &#39;longitude&#39;: 12.2218072411, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597398626, &#39;longitude&#39;: 12.22183808651, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599344096, &#39;longitude&#39;: 12.22185954418, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22186440585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762466, &#39;longitude&#39;: 12.2218707761, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599814764, &#39;longitude&#39;: 12.22187899036, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762477, &#39;longitude&#39;: 12.22188636627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22190128623, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599354556, &#39;longitude&#39;: 12.22191620585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600076252, &#39;longitude&#39;: 12.22191134451, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602105396, &#39;longitude&#39;: 12.22185032425, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602900319, &#39;longitude&#39;: 12.2218377514, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39604009026, &#39;longitude&#39;: 12.2218307106, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605065436, &#39;longitude&#39;: 12.22182769312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606006791, &#39;longitude&#39;: 12.22182869894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960685401, &#39;longitude&#39;: 12.22183506919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611633997, &#39;longitude&#39;: 12.22186943499, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612460307, &#39;longitude&#39;: 12.22187664326, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612732243, &#39;longitude&#39;: 12.22188435478, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22189357487, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612789749, &#39;longitude&#39;: 12.22191179983, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612659026, &#39;longitude&#39;: 12.22197035311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22198292596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613129703, &#39;longitude&#39;: 12.22199633701, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613673606, &#39;longitude&#39;: 12.22200170126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614081526, &#39;longitude&#39;: 12.22200455111, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39619112533, &#39;longitude&#39;: 12.22203154083, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39626601506, &#39;longitude&#39;: 12.22207881477, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39632751658, &#39;longitude&#39;: 12.22212139484, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39641903656, &#39;longitude&#39;: 12.2221864384, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39641903656, &#39;longitude&#39;: 12.2221864384, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39632751658, &#39;longitude&#39;: 12.22212139484, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39626601506, &#39;longitude&#39;: 12.22207881477, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39619112533, &#39;longitude&#39;: 12.22203154083, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614081526, &#39;longitude&#39;: 12.22200455111, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613673606, &#39;longitude&#39;: 12.22200170126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613129703, &#39;longitude&#39;: 12.22199633701, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22198292596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612659026, &#39;longitude&#39;: 12.22197035311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612789749, &#39;longitude&#39;: 12.22191179983, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22189357487, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612732243, &#39;longitude&#39;: 12.22188435478, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612460307, &#39;longitude&#39;: 12.22187664326, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611633997, &#39;longitude&#39;: 12.22186943499, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960685401, &#39;longitude&#39;: 12.22183506919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606006791, &#39;longitude&#39;: 12.22182869894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605065436, &#39;longitude&#39;: 12.22182769312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39604009026, &#39;longitude&#39;: 12.2218307106, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602900319, &#39;longitude&#39;: 12.2218377514, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602105396, &#39;longitude&#39;: 12.22185032425, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600076252, &#39;longitude&#39;: 12.22191134451, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="n">calculate_track_length</span><span class="p">(</span><span class="n">full_route</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Writing coordinates for way </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">yaml_file_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length of the track: </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s1"> meters&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing coordinates for way Bürgeramt zu Rathaus to out/way_Bürgeramt zu Rathaus.yaml
+Length of the track: 1245.146981813252 meters
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;out/way_full_route.yaml&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">full_route</span><span class="p">,</span> <span class="n">yaml_file</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Bürgeramt&quot;</span><span class="p">,</span> <span class="s2">&quot;Bürgeramt zu Rathausplatz&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Rathausplatz zu Ringstraße&quot;</span><span class="p">,</span> <span class="s2">&quot;Ringstraße zu Amtsgasse&quot;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ringstraße zu Amtsgasse&quot;</span><span class="p">,</span> <span class="s2">&quot;Rathausplatz zu Ringstraße&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Rathaus zu Rathausplatz&quot;</span><span class="p">]</span>  <span class="c1"># all reversed</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Post&quot;</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rathaus zu Post&quot;</span><span class="p">]</span>  <span class="c1"># reversed</span>
+<span class="n">full_route_alternative</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">full_route_alternative</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">full_route_alternative</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">full_route_alternative</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">full_route_alternative</span> <span class="o">+=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">filtered_nodes</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">full_route_alternative</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;latitude&#39;: 51.39578111236, &#39;longitude&#39;: 12.22267493572, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599354556, &#39;longitude&#39;: 12.22191620585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22190128623, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762477, &#39;longitude&#39;: 12.22188636627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599814764, &#39;longitude&#39;: 12.22187899036, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762466, &#39;longitude&#39;: 12.2218707761, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22186440585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599344096, &#39;longitude&#39;: 12.22185954418, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597398626, &#39;longitude&#39;: 12.22183808651, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39593779632, &#39;longitude&#39;: 12.2218072411, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585704871, &#39;longitude&#39;: 12.22177740153, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581458294, &#39;longitude&#39;: 12.22174387392, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579873672, &#39;longitude&#39;: 12.22173138488, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957929838, &#39;longitude&#39;: 12.22172367378, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579115338, &#39;longitude&#39;: 12.22171923137, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578995069, &#39;longitude&#39;: 12.22171470489, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578911377, &#39;longitude&#39;: 12.22171076565, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578859079, &#39;longitude&#39;: 12.22170632324, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957882247, &#39;longitude&#39;: 12.22170255139, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578843405, &#39;longitude&#39;: 12.22169827636, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578885228, &#39;longitude&#39;: 12.22169358275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579000283, &#39;longitude&#39;: 12.22168955944, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579261787, &#39;longitude&#39;: 12.22168251839, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579518031, &#39;longitude&#39;: 12.22167589693, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579742911, &#39;longitude&#39;: 12.22166852086, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580098552, &#39;longitude&#39;: 12.22165334936, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958023974, &#39;longitude&#39;: 12.22164463243, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580307743, &#39;longitude&#39;: 12.22163356807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395802502, &#39;longitude&#39;: 12.22162711426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580114226, &#39;longitude&#39;: 12.22162309094, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579946873, &#39;longitude&#39;: 12.22161873235, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579695859, &#39;longitude&#39;: 12.22161613371, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22160079483, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578367479, &#39;longitude&#39;: 12.22159266463, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578048478, &#39;longitude&#39;: 12.2215826061, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577849731, &#39;longitude&#39;: 12.2215735539, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577854977, &#39;longitude&#39;: 12.22156441737, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22150716897, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579047351, &#39;longitude&#39;: 12.22150054752, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579444814, &#39;longitude&#39;: 12.22149644039, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579905035, &#39;longitude&#39;: 12.22149199798, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580286824, &#39;longitude&#39;: 12.22148906406, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581149722, &#39;longitude&#39;: 12.221485041, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582064948, &#39;longitude&#39;: 12.22148235854, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582734344, &#39;longitude&#39;: 12.22148085005, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583555419, &#39;longitude&#39;: 12.22148143678, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584444496, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958573102, &#39;longitude&#39;: 12.22149157863, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586070939, &#39;longitude&#39;: 12.22149174652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958641611, &#39;longitude&#39;: 12.22149007006, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586672363, &#39;longitude&#39;: 12.22148797466, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586855421, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39588152404, &#39;longitude&#39;: 12.22146157142, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39590537178, &#39;longitude&#39;: 12.22140122171, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39592461732, &#39;longitude&#39;: 12.22135830637, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39594344446, &#39;longitude&#39;: 12.221321426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596750136, &#39;longitude&#39;: 12.22124297138, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596886094, &#39;longitude&#39;: 12.22123794249, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597126663, &#39;longitude&#39;: 12.22123341626, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597607817, &#39;longitude&#39;: 12.2212245312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597822221, &#39;longitude&#39;: 12.22122042431, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3959806802, &#39;longitude&#39;: 12.22121715537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39598611915, &#39;longitude&#39;: 12.22121053367, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599124446, &#39;longitude&#39;: 12.22119997222, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599741558, &#39;longitude&#39;: 12.22118295696, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600902553, &#39;longitude&#39;: 12.2211489266, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601425528, &#39;longitude&#39;: 12.22112847475, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601979893, &#39;longitude&#39;: 12.22110852566, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960415547, &#39;longitude&#39;: 12.22102001276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39607607104, &#39;longitude&#39;: 12.22087249126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611937332, &#39;longitude&#39;: 12.22067266669, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613840958, &#39;longitude&#39;: 12.22053587403, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615828259, &#39;longitude&#39;: 12.22045473721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617072926, &#39;longitude&#39;: 12.22040377541, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22036320683, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617721413, &#39;longitude&#39;: 12.2203266619, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22029196065, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3961738671, &#39;longitude&#39;: 12.22025508044, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39616936963, &#39;longitude&#39;: 12.22021903809, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615263447, &#39;longitude&#39;: 12.22009699758, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614384851, &#39;longitude&#39;: 12.22000312027, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613851407, &#39;longitude&#39;: 12.21998568607, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613087865, &#39;longitude&#39;: 12.21997596307, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612543982, &#39;longitude&#39;: 12.21996355768, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612146522, &#39;longitude&#39;: 12.21994813498, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611351601, &#39;longitude&#39;: 12.21989616718, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610985509, &#39;longitude&#39;: 12.21986632777, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610389328, &#39;longitude&#39;: 12.21983883496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39608213755, &#39;longitude&#39;: 12.21976473894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606623911, &#39;longitude&#39;: 12.21971075948, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605947448, &#39;longitude&#39;: 12.21968473888, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605473367, &#39;longitude&#39;: 12.21966650303, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605947448, &#39;longitude&#39;: 12.21968473888, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606623911, &#39;longitude&#39;: 12.21971075948, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39608213755, &#39;longitude&#39;: 12.21976473894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610389328, &#39;longitude&#39;: 12.21983883496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39610985509, &#39;longitude&#39;: 12.21986632777, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611351601, &#39;longitude&#39;: 12.21989616718, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612146522, &#39;longitude&#39;: 12.21994813498, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612543982, &#39;longitude&#39;: 12.21996355768, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613087865, &#39;longitude&#39;: 12.21997596307, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613851407, &#39;longitude&#39;: 12.21998568607, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614384851, &#39;longitude&#39;: 12.22000312027, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615263447, &#39;longitude&#39;: 12.22009699758, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39616936963, &#39;longitude&#39;: 12.22021903809, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3961738671, &#39;longitude&#39;: 12.22025508044, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22029196065, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617721413, &#39;longitude&#39;: 12.2203266619, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617627288, &#39;longitude&#39;: 12.22036320683, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39617072926, &#39;longitude&#39;: 12.22040377541, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39615828259, &#39;longitude&#39;: 12.22045473721, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613840958, &#39;longitude&#39;: 12.22053587403, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611937332, &#39;longitude&#39;: 12.22067266669, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39607607104, &#39;longitude&#39;: 12.22087249126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960415547, &#39;longitude&#39;: 12.22102001276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601979893, &#39;longitude&#39;: 12.22110852566, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39601425528, &#39;longitude&#39;: 12.22112847475, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600902553, &#39;longitude&#39;: 12.2211489266, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599741558, &#39;longitude&#39;: 12.22118295696, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599124446, &#39;longitude&#39;: 12.22119997222, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39598611915, &#39;longitude&#39;: 12.22121053367, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3959806802, &#39;longitude&#39;: 12.22121715537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597822221, &#39;longitude&#39;: 12.22122042431, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597607817, &#39;longitude&#39;: 12.2212245312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597126663, &#39;longitude&#39;: 12.22123341626, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596886094, &#39;longitude&#39;: 12.22123794249, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39596750136, &#39;longitude&#39;: 12.22124297138, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39594344446, &#39;longitude&#39;: 12.221321426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39592461732, &#39;longitude&#39;: 12.22135830637, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39590537178, &#39;longitude&#39;: 12.22140122171, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39588152404, &#39;longitude&#39;: 12.22146157142, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586855421, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586672363, &#39;longitude&#39;: 12.22148797466, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958641611, &#39;longitude&#39;: 12.22149007006, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586070939, &#39;longitude&#39;: 12.22149174652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958573102, &#39;longitude&#39;: 12.22149157863, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584444496, &#39;longitude&#39;: 12.22148504075, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583555419, &#39;longitude&#39;: 12.22148143678, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582734344, &#39;longitude&#39;: 12.22148085005, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582064948, &#39;longitude&#39;: 12.22148235854, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581149722, &#39;longitude&#39;: 12.221485041, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580286814, &#39;longitude&#39;: 12.22148755549, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579544185, &#39;longitude&#39;: 12.22148722021, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39574188888, &#39;longitude&#39;: 12.22146626545, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39572944199, &#39;longitude&#39;: 12.2214550337, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39571364814, &#39;longitude&#39;: 12.22144329887, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39570025988, &#39;longitude&#39;: 12.22143977847, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39568268778, &#39;longitude&#39;: 12.22143441405, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39565999037, &#39;longitude&#39;: 12.2214241883, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39563520124, &#39;longitude&#39;: 12.22141463276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39560643724, &#39;longitude&#39;: 12.22140390409, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39559399032, &#39;longitude&#39;: 12.2213995455, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558719157, &#39;longitude&#39;: 12.22139619274, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558102041, &#39;longitude&#39;: 12.22139099596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39556867817, &#39;longitude&#39;: 12.22138194334, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39553928666, &#39;longitude&#39;: 12.22135998275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39549828494, &#39;longitude&#39;: 12.22132746097, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39545017064, &#39;longitude&#39;: 12.22128756311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39539578049, &#39;longitude&#39;: 12.22124565359, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39535143156, &#39;longitude&#39;: 12.22121011432, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39530771016, &#39;longitude&#39;: 12.22117692199, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39526273356, &#39;longitude&#39;: 12.22114138272, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39523009935, &#39;longitude&#39;: 12.2211205956, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39519830188, &#39;longitude&#39;: 12.2210981321, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39516566763, &#39;longitude&#39;: 12.22107969191, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515060565, &#39;longitude&#39;: 12.22106929835, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514966417, &#39;longitude&#39;: 12.2210709749, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514432972, &#39;longitude&#39;: 12.22106846033, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514098262, &#39;longitude&#39;: 12.22106510757, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513648494, &#39;longitude&#39;: 12.2210568933, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513543897, &#39;longitude&#39;: 12.22104381753, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513658954, &#39;longitude&#39;: 12.22101565434, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513868148, &#39;longitude&#39;: 12.22098866461, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514338835, &#39;longitude&#39;: 12.22096486, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39518627313, &#39;longitude&#39;: 12.22077593191, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39521984885, &#39;longitude&#39;: 12.22053654458, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39523323725, &#39;longitude&#39;: 12.22018215772, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39522779821, &#39;longitude&#39;: 12.21998065677, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39521775691, &#39;longitude&#39;: 12.21994310584, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3951976743, &#39;longitude&#39;: 12.21993271228, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515855503, &#39;longitude&#39;: 12.21992567148, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395108976, &#39;longitude&#39;: 12.21992701259, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39504287056, &#39;longitude&#39;: 12.21993170645, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3949734179, &#39;longitude&#39;: 12.21994310584, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3949052203, &#39;longitude&#39;: 12.21995182302, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39482635363, &#39;longitude&#39;: 12.21996322241, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39475941099, &#39;longitude&#39;: 12.21997428652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39471819938, &#39;longitude&#39;: 12.21998065677, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39471819938, &#39;longitude&#39;: 12.21998065677, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39475941099, &#39;longitude&#39;: 12.21997428652, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39482635363, &#39;longitude&#39;: 12.21996322241, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3949052203, &#39;longitude&#39;: 12.21995182302, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3949734179, &#39;longitude&#39;: 12.21994310584, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39504287056, &#39;longitude&#39;: 12.21993170645, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395108976, &#39;longitude&#39;: 12.21992701259, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515855503, &#39;longitude&#39;: 12.21992567148, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3951976743, &#39;longitude&#39;: 12.21993271228, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39521775691, &#39;longitude&#39;: 12.21994310584, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39522779821, &#39;longitude&#39;: 12.21998065677, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39523323725, &#39;longitude&#39;: 12.22018215772, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39521984885, &#39;longitude&#39;: 12.22053654458, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39518627313, &#39;longitude&#39;: 12.22077593191, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514338835, &#39;longitude&#39;: 12.22096486, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513868148, &#39;longitude&#39;: 12.22098866461, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513658954, &#39;longitude&#39;: 12.22101565434, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513543897, &#39;longitude&#39;: 12.22104381753, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39513648494, &#39;longitude&#39;: 12.2210568933, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514098262, &#39;longitude&#39;: 12.22106510757, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514432972, &#39;longitude&#39;: 12.22106846033, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39514966417, &#39;longitude&#39;: 12.2210709749, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39515060565, &#39;longitude&#39;: 12.22106929835, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39516566763, &#39;longitude&#39;: 12.22107969191, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39519830188, &#39;longitude&#39;: 12.2210981321, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39523009935, &#39;longitude&#39;: 12.2211205956, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39526273356, &#39;longitude&#39;: 12.22114138272, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39530771016, &#39;longitude&#39;: 12.22117692199, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39535143156, &#39;longitude&#39;: 12.22121011432, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39539578049, &#39;longitude&#39;: 12.22124565359, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39545017064, &#39;longitude&#39;: 12.22128756311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39549828494, &#39;longitude&#39;: 12.22132746097, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39553928666, &#39;longitude&#39;: 12.22135998275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39556867817, &#39;longitude&#39;: 12.22138194334, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558102041, &#39;longitude&#39;: 12.22139099596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39558719157, &#39;longitude&#39;: 12.22139619274, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39559399032, &#39;longitude&#39;: 12.2213995455, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39560643724, &#39;longitude&#39;: 12.22140390409, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39563520124, &#39;longitude&#39;: 12.22141463276, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39565999037, &#39;longitude&#39;: 12.2214241883, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39568268778, &#39;longitude&#39;: 12.22143441405, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39570025988, &#39;longitude&#39;: 12.22143977847, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39571364814, &#39;longitude&#39;: 12.22144329887, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39572944199, &#39;longitude&#39;: 12.2214550337, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39574188888, &#39;longitude&#39;: 12.22146626545, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39575475426, &#39;longitude&#39;: 12.22147297081, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957776606, &#39;longitude&#39;: 12.22148068232, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578289038, &#39;longitude&#39;: 12.22148487328, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957871788, &#39;longitude&#39;: 12.22149308754, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578832935, &#39;longitude&#39;: 12.22150197236, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22150716897, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577854977, &#39;longitude&#39;: 12.22156441737, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39577849731, &#39;longitude&#39;: 12.2215735539, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578048478, &#39;longitude&#39;: 12.2215826061, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578367479, &#39;longitude&#39;: 12.22159266463, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578780648, &#39;longitude&#39;: 12.22160079483, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579695859, &#39;longitude&#39;: 12.22161613371, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579946873, &#39;longitude&#39;: 12.22161873235, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580114226, &#39;longitude&#39;: 12.22162309094, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.395802502, &#39;longitude&#39;: 12.22162711426, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580307743, &#39;longitude&#39;: 12.22163356807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3958023974, &#39;longitude&#39;: 12.22164463243, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39580098552, &#39;longitude&#39;: 12.22165334936, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579742911, &#39;longitude&#39;: 12.22166852086, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579518031, &#39;longitude&#39;: 12.22167589693, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579261787, &#39;longitude&#39;: 12.22168251839, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579000283, &#39;longitude&#39;: 12.22168955944, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578885228, &#39;longitude&#39;: 12.22169358275, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578843405, &#39;longitude&#39;: 12.22169827636, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957882247, &#39;longitude&#39;: 12.22170255139, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578859079, &#39;longitude&#39;: 12.22170632324, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578911377, &#39;longitude&#39;: 12.22171076565, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39578995069, &#39;longitude&#39;: 12.22171470489, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579115338, &#39;longitude&#39;: 12.22171923137, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3957929838, &#39;longitude&#39;: 12.22172367378, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39579873672, &#39;longitude&#39;: 12.22173138488, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581458294, &#39;longitude&#39;: 12.22174387392, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585704871, &#39;longitude&#39;: 12.22177740153, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39593779632, &#39;longitude&#39;: 12.2218072411, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597398626, &#39;longitude&#39;: 12.22183808651, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599344096, &#39;longitude&#39;: 12.22185954418, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22186440585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762466, &#39;longitude&#39;: 12.2218707761, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599814764, &#39;longitude&#39;: 12.22187899036, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599762477, &#39;longitude&#39;: 12.22188636627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599595114, &#39;longitude&#39;: 12.22190128623, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39599354556, &#39;longitude&#39;: 12.22191620585, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600076252, &#39;longitude&#39;: 12.22191134451, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602105396, &#39;longitude&#39;: 12.22185032425, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602900319, &#39;longitude&#39;: 12.2218377514, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39604009026, &#39;longitude&#39;: 12.2218307106, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605065436, &#39;longitude&#39;: 12.22182769312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606006791, &#39;longitude&#39;: 12.22182869894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960685401, &#39;longitude&#39;: 12.22183506919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611633997, &#39;longitude&#39;: 12.22186943499, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612460307, &#39;longitude&#39;: 12.22187664326, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612732243, &#39;longitude&#39;: 12.22188435478, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22189357487, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612789749, &#39;longitude&#39;: 12.22191179983, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612659026, &#39;longitude&#39;: 12.22197035311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22198292596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613129703, &#39;longitude&#39;: 12.22199633701, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613673606, &#39;longitude&#39;: 12.22200170126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614081526, &#39;longitude&#39;: 12.22200455111, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39619112533, &#39;longitude&#39;: 12.22203154083, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39626601506, &#39;longitude&#39;: 12.22207881477, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39632751658, &#39;longitude&#39;: 12.22212139484, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39641903656, &#39;longitude&#39;: 12.2221864384, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39641903656, &#39;longitude&#39;: 12.2221864384, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39632751658, &#39;longitude&#39;: 12.22212139484, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39626601506, &#39;longitude&#39;: 12.22207881477, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39619112533, &#39;longitude&#39;: 12.22203154083, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39614081526, &#39;longitude&#39;: 12.22200455111, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613673606, &#39;longitude&#39;: 12.22200170126, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39613129703, &#39;longitude&#39;: 12.22199633701, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22198292596, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612659026, &#39;longitude&#39;: 12.22197035311, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612789749, &#39;longitude&#39;: 12.22191179983, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612774081, &#39;longitude&#39;: 12.22189357487, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612732243, &#39;longitude&#39;: 12.22188435478, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39612460307, &#39;longitude&#39;: 12.22187664326, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39611633997, &#39;longitude&#39;: 12.22186943499, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.3960685401, &#39;longitude&#39;: 12.22183506919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39606006791, &#39;longitude&#39;: 12.22182869894, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39605065436, &#39;longitude&#39;: 12.22182769312, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39604009026, &#39;longitude&#39;: 12.2218307106, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602900319, &#39;longitude&#39;: 12.2218377514, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39602105396, &#39;longitude&#39;: 12.22185032425, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39600076252, &#39;longitude&#39;: 12.22191134451, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39597419545, &#39;longitude&#39;: 12.22201846506, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39595620508, &#39;longitude&#39;: 12.22213514116, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39591875998, &#39;longitude&#39;: 12.2223044556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39589407548, &#39;longitude&#39;: 12.22242280807, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39586918178, &#39;longitude&#39;: 12.22254652496, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39585349247, &#39;longitude&#39;: 12.2226105627, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39584282373, &#39;longitude&#39;: 12.22265481915, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583916273, &#39;longitude&#39;: 12.22266973919, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583701852, &#39;longitude&#39;: 12.22267669617, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583576338, &#39;longitude&#39;: 12.22268038421, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583450839, &#39;longitude&#39;: 12.22268314999, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39583131807, &#39;longitude&#39;: 12.22268809556, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582859864, &#39;longitude&#39;: 12.22269077769, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582493774, &#39;longitude&#39;: 12.2226935438, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39582101541, &#39;longitude&#39;: 12.22269589073, &#39;yaw&#39;: 0.0},
+ {&#39;latitude&#39;: 51.39581604718, &#39;longitude&#39;: 12.22269555537, &#39;yaw&#39;: 0.0}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="n">calculate_track_length</span><span class="p">(</span><span class="n">full_route_alternative</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Writing coordinates for way </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">yaml_file_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length of the track: </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s1"> meters&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing coordinates for way Bürgeramt zu Rathaus to out/way_Bürgeramt zu Rathaus.yaml
+Length of the track: 1174.4327367627795 meters
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;out/way_full_route_alternative.yaml&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">full_route_alternative</span><span class="p">,</span> <span class="n">yaml_file</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./prototypes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../book/prototypes/06-robot/robot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Robot</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../book/prototypes/07-bicycle/bicycle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bicycle</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wegpunkte</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abschnitte">Abschnitte</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volle-runde">Volle Runde</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Martin Plank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

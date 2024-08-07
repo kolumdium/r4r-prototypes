@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fetching Data for Cycling Quality Index &#8212; R4R Prototypes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prototypes/42-04-Cycling-Quality-Index';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://kolumdium.github.io/r4r-prototypes-public/prototypes/42-04-Cycling-Quality-Index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../book/bib.html" />
+    <link rel="prev" title="Alkis Test" href="42-02-Alkis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../book/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="R4R Prototypes - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="R4R Prototypes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Allgemeine Informationen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/basics.html">Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/r4r/r4r.html">Das Projekt Ready for Smart City Robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/begriffe.html">Begrifflichkeiten und Erklärungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/folium/folium.html">Folium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/folium/foliumBasics.html">Folium Basics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/osm/osm.html">OSM Infos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/osmTags.html">OSM Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/overpass.html">Overpass und Overpass Turbo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osm/overpy.html">Overpy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/basics/osmnx/osmnx.html">OSMNX</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/basics/osmnx/osmnxBasics.html">OSMnx Basics</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prototypen</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/01-tagging/tagging.html">Tagging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-01-tag-stats.html">OSM Tag Stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-02-tag-filtering.html">Tagfilter am Beispiel von Freiberg, Sachsen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/02-easy-analytics/easy-analytics.html">Easy Analytics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-01-show-speeds.html">Geschwindigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-02-traveltime.html">Traveltimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-03-Stra%C3%9Fen-Haeuser-plot.html">Buildings in Freiberg</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/03-population/population.html">Population Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="03-01-population.html">Population</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/04-ohsome/ohsome.html">Ohsome API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="04-01-ohsome.html">Ohsome API Test</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/05-reachability/reachability.html">Reachability Analytics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="05-01-isochronen-Freiberg.html">Isochronen in Freiberg (Dominos Beispiel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-02-isochronen-Dresden.html">Isochronen in Dresden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-03-isochronen-Schkeuditz.html">Isochronen in Schkeuditz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-04-isochronen-Selessen.html">Isochronen in Selessen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/prototypes/06-robot/robot.html">Robot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="06-02-osmway-to-yaml.html">Wegpunkte</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/prototypes/07-bicycle/bicycle.html">Bicycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/prototypes/10-r4r/r4r.html">R4R</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../book/prototypes/42-random/random.html">Random Notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="42-01-Schkeuditz-OPNV.html">ÖPNV Schkeuditz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="42-02-Alkis.html">Alkis Test</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fetching Data for Cycling Quality Index</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anhang</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../book/bib.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/debug.html">Debug Infos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/kolumdium/r4r-prototypes-public/master?urlpath=tree/prototypes/42-04-Cycling-Quality-Index.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/kolumdium/r4r-prototypes-public/blob/master/prototypes/42-04-Cycling-Quality-Index.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes-public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes-public/edit/main/prototypes/42-04-Cycling-Quality-Index.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kolumdium/r4r-prototypes-public/issues/new?title=Issue%20on%20page%20%2Fprototypes/42-04-Cycling-Quality-Index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/prototypes/42-04-Cycling-Quality-Index.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fetching Data for Cycling Quality Index</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fetching-data-for-cycling-quality-index">
+<h1>Fetching Data for Cycling Quality Index<a class="headerlink" href="#fetching-data-for-cycling-quality-index" title="Link to this heading">#</a></h1>
+<p>This is a script to fetch the needed data with osmnx to calculate the Cycling Quality Index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+<span class="kn">import</span> <span class="nn">pyproj</span> <span class="c1"># we need this for jupyter-book to build right</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">LineString</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="n">configreader</span> <span class="k">as</span> <span class="n">cfr</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="n">osmhelper</span> <span class="k">as</span> <span class="n">oh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ox.settings.overpass_url = &quot;http://192.168.0.8:7890/api/&quot;</span>
+<span class="n">ox</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">overpass_rate_limit</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">ox</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">log_console</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ox</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">useful_tags_way</span> <span class="o">+=</span> <span class="p">[</span>
+    <span class="s1">&#39;highway&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;oneway:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;segregated&#39;</span><span class="p">,</span> <span class="s1">&#39;tracktype&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;is_sidepath&#39;</span><span class="p">,</span> <span class="s1">&#39;is_sidepath:of&#39;</span><span class="p">,</span> <span class="s1">&#39;priority_road&#39;</span><span class="p">,</span> <span class="s1">&#39;access&#39;</span><span class="p">,</span> <span class="s1">&#39;vehicle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;motor_vehicle&#39;</span><span class="p">,</span> <span class="s1">&#39;bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;foot&#39;</span><span class="p">,</span> <span class="s1">&#39;bicycle_road&#39;</span><span class="p">,</span> <span class="s1">&#39;footway&#39;</span><span class="p">,</span> <span class="s1">&#39;path&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;bridleway&#39;</span><span class="p">,</span> <span class="s1">&#39;informal&#39;</span><span class="p">,</span> <span class="s1">&#39;maxspeed&#39;</span><span class="p">,</span> <span class="s1">&#39;lit&#39;</span><span class="p">,</span> <span class="s1">&#39;incline&#39;</span><span class="p">,</span> <span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="s1">&#39;surface:bicycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;lanes&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;width:carriageway&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;width:effective&#39;</span><span class="p">,</span> <span class="s1">&#39;width:lanes&#39;</span><span class="p">,</span> <span class="s1">&#39;width:lanes:forward&#39;</span><span class="p">,</span> <span class="s1">&#39;width:lanes:backward&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lane_markings&#39;</span><span class="p">,</span> <span class="s1">&#39;separation&#39;</span><span class="p">,</span> <span class="s1">&#39;separation:both&#39;</span><span class="p">,</span> <span class="s1">&#39;separation:left&#39;</span><span class="p">,</span> <span class="s1">&#39;separation:right&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;buffer&#39;</span><span class="p">,</span> <span class="s1">&#39;buffer:both&#39;</span><span class="p">,</span> <span class="s1">&#39;buffer:left&#39;</span><span class="p">,</span> <span class="s1">&#39;buffer:right&#39;</span><span class="p">,</span> <span class="s1">&#39;traffic_mode:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;traffic_mode:left&#39;</span><span class="p">,</span> <span class="s1">&#39;traffic_mode:right&#39;</span><span class="p">,</span> <span class="s1">&#39;surface:colour&#39;</span><span class="p">,</span> <span class="s1">&#39;traffic_sign&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;parking:both&#39;</span><span class="p">,</span> <span class="s1">&#39;parking:left&#39;</span><span class="p">,</span> <span class="s1">&#39;parking:right&#39;</span><span class="p">,</span> <span class="s1">&#39;parking:both:orientation&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;parking:left:orientation&#39;</span><span class="p">,</span> <span class="s1">&#39;parking:right:orientation&#39;</span><span class="p">,</span> <span class="s1">&#39;parking:both:width&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;parking:left:width&#39;</span><span class="p">,</span> <span class="s1">&#39;parking:right:width&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:both:bicycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:left:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:right:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:surface&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:both:surface&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:left:surface&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:right:surface&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:both:smoothness&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:left:smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:right:smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:width&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:both:width&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:left:width&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:right:width&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:both:oneway&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:left:oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:right:oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:oneway:bicycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:both:oneway:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:left:oneway:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:right:oneway:bicycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:traffic_sign&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:both:traffic_sign&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk:left:traffic_sign&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidewalk:right:traffic_sign&#39;</span><span class="p">,</span> <span class="s1">&#39;footway:width&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:lane&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:lane&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:lane&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:lane&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:surface&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:surface&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:surface&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:surface&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:smoothness&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right:smoothness&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:width&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:width&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:width&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right:width&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:oneway&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right:oneway&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:oneway:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:oneway:bicycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:left:oneway:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:oneway:bicycle&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:segregated&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:segregated&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:segregated&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:segregated&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:foot&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:foot&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:foot&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:foot&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:separation&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:separation:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:separation:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:separation:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:separation&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:separation:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:separation:right&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:separation:both&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:separation&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:separation:left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right:separation:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:separation:both&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:separation&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:left:separation:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:separation:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:separation:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:buffer&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:buffer:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:buffer:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:buffer:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:buffer&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:buffer:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:buffer:right&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:buffer:both&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:buffer&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:buffer:left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right:buffer:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:buffer:both&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:buffer&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:left:buffer:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:buffer:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:buffer:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:traffic_mode:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:traffic_mode:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:traffic_mode:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:both:traffic_mode:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:traffic_mode:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:traffic_mode:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:left:traffic_mode:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:traffic_mode:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:left:traffic_mode:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:right:traffic_mode:left&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:traffic_mode:right&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:traffic_mode:both&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:surface:colour&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:surface:colour&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:surface:colour&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:left:surface:colour&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:traffic_sign&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:both:traffic_sign&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:left:traffic_sign&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:right:traffic_sign&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:lanes&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway:lanes:forward&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cycleway:lanes:backward&#39;</span><span class="p">,</span> <span class="s1">&#39;vehicle:lanes&#39;</span><span class="p">,</span> <span class="s1">&#39;bus:lanes&#39;</span><span class="p">,</span> <span class="s1">&#39;psv:lanes&#39;</span><span class="p">,</span> <span class="s1">&#39;crossing&#39;</span><span class="p">,</span> <span class="s1">&#39;crossing:markings&#39;</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">,</span> <span class="s1">&#39;cycleway&#39;</span><span class="p">,</span> <span class="s1">&#39;sidewalk&#39;</span><span class="p">,</span> <span class="s1">&#39;parking&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_overpass_api</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an error for HTTP codes 4xx/5xx</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>  <span class="c1"># Try to parse JSON</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;API response is valid JSON.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Response content is not valid JSON.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Response content:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">http_err</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;HTTP error occurred: </span><span class="si">{</span><span class="n">http_err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># e.g., 403 Forbidden</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Other error occurred: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Test the Overpass API URL</span>
+<span class="n">test_overpass_api</span><span class="p">(</span>
+    <span class="s2">&quot;http://192.168.0.8:7890/api/interpreter?data=%5Bout:json%5D;node(1966391124);out;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Other error occurred: HTTPConnectionPool(host=&#39;192.168.0.8&#39;, port=7890): Max retries exceeded with url: /api/interpreter?data=%5Bout:json%5D;node(1966391124);out; (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPConnection object at 0x00000244162F5AC0&gt;: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the bounding box coordinates</span>
+<span class="c1"># north, south, east, west = 52.5009195009107046, 52.4543246009110788, 13.4859782, 13.3924347464750326</span>
+<span class="n">place</span> <span class="o">=</span> <span class="s1">&#39;Magdeburg, Germany&#39;</span>
+<span class="c1"># # Use osmnx to get the graph</span>
+<span class="c1"># try:</span>
+<span class="c1">#     G = ox.graph_from_bbox((north, south, east, west), network_type=&#39;all&#39;)</span>
+<span class="c1">#     # Plot the graph</span>
+<span class="c1">#     ox.plot_graph(G)</span>
+<span class="c1"># except Exception as e:</span>
+<span class="c1">#     print(f&quot;Error: {e}&quot;)</span>
+<span class="c1">#     raise e</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Define the custom filters for the query</span>
+<span class="c1"># custom_filter = (</span>
+<span class="c1">#     &#39;[&quot;highway&quot;~&quot;cycleway|path|footway|bridleway|steps|motorway|motorway_link|trunk|trunk_link|primary|&#39;</span>
+<span class="c1">#     &#39;primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|&#39;</span>
+<span class="c1">#     &#39;pedestrian|road|service|track&quot;]&#39;</span>
+<span class="c1">#     # &#39;[&quot;bicycle&quot;!~&quot;no|dismount&quot;]&#39;</span>
+<span class="c1">#     # &#39;[&quot;service&quot;!~&quot;&quot;]&#39;</span>
+<span class="c1">#     # &#39;[&quot;service&quot;~&quot;alley|yes|designated|permissive&quot;]&#39;</span>
+<span class="c1"># )</span>
+
+<span class="c1"># # Fetch the data</span>
+<span class="c1"># G = ox.graph_from_bbox((north, south, east, west),</span>
+<span class="c1">#                        custom_filter=custom_filter, network_type=&#39;all&#39;)</span>
+
+<span class="c1"># # Plot the graph</span>
+<span class="c1"># ox.plot_graph(ox.project_graph(G))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">graph_from_place</span><span class="p">(</span><span class="n">place</span><span class="p">,</span> <span class="n">network_type</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
+                        <span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">truncate_by_edge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+
+<span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">graph_to_gdfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+
+
+<span class="c1"># edges.head(2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ox</span><span class="o">.</span><span class="n">plot_graph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/627685a3183bb31a8fae5c215ae7074006c1d9905e4603beb0a2cda587398cc1.png" src="../_images/627685a3183bb31a8fae5c215ae7074006c1d9905e4603beb0a2cda587398cc1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 800x800 with 1 Axes&gt;, &lt;Axes: &gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert edges to GeoDataFrame with geometry as LineString</span>
+<span class="k">def</span> <span class="nf">make_linestring</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">LineString</span><span class="p">([</span><span class="n">nodes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">],</span> <span class="s1">&#39;geometry&#39;</span><span class="p">],</span> <span class="n">nodes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">],</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]])</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Ensure &#39;u&#39; and &#39;v&#39; columns are accessible</span>
+<span class="n">edges</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">edges</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">make_linestring</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert list-type columns to strings or remove them</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">edges</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">edges</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">object</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">[</span><span class="n">column</span><span class="p">]):</span>
+        <span class="n">edges</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># save_path = Path(&quot;out&quot;, place + &quot;.geojson&quot;)</span>
+<span class="c1"># with open(save_path, &quot;w&quot;) as f:</span>
+<span class="c1">#     f.write(edges.to_json(na=&quot;drop&quot;))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./prototypes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="42-02-Alkis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Alkis Test</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../book/bib.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Martin Plank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
